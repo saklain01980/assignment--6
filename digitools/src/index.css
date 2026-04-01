@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom gradient for buttons - purple to teal */
+.btn-gradient {
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #06b6d4 100%) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #4f46e5 50%, #0891b2 100%) !important;
+}
+
+/* Purple-to-teal gradient background */
+.bg-gradient-purple {
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 40%, #06b6d4 100%) !important;
+}
+
+/* Card hover effect */
+.product-card {
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -10px rgba(124, 58, 237, 0.18);
+}
+
+/* Toast custom styles */
+.Toastify__toast {
+  border-radius: 10px !important;
+  font-size: 14px !important;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Stat card colors - gradient segments */
+.stat-green {
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%) !important;
+}
+
+.stat-yellow {
+  background: linear-gradient(135deg, #6366f1 0%, #818cf8 100%) !important;
+}
+
+.stat-purple {
+  background: linear-gradient(135deg, #818cf8 0%, #06b6d4 100%) !important;
+}
+
+/* Pricing card highlight - purple to teal */
+.pricing-highlight {
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 40%, #06b6d4 100%) !important;
+}
+
+/* Section transitions */
+.section-fade {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Products section container */
+.products-container {
+  border: 1px solid #e5e7eb;
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  background: #ffffff;
+}
+
+/* Steps card gradient accent */
+.step-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #7c3aed 0%, #6366f1 50%, #06b6d4 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.step-card:hover::before {
+  opacity: 1;
+}
+
+/* Footer top border accent */
+.footer-accent {
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, #7c3aed 0%, #6366f1 50%, #06b6d4 100%) 1;
+}
+
+/* ===== SPACING OVERRIDES ===== */
+/* Ensure sections have proper spacing */
+section {
+  position: relative;
+}
+
+/* Pricing cards need proper padding */
+.pricing-card {
+  padding: 2rem !important;
+}
+
+/* Ensure hero has generous spacing */
+.hero-section {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding-top: 7rem !important;
+    padding-bottom: 7rem !important;
+  }
+}
