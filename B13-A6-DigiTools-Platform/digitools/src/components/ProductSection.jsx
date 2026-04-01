@@ -35,6 +35,7 @@ const ProductSection = ({
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
             <button
               onClick={() => setActiveTab('products')}
+              className={activeTab === 'products' ? 'btn-gradient' : ''}
               style={{
                 fontSize: '0.875rem',
                 fontWeight: 600,
@@ -42,16 +43,17 @@ const ProductSection = ({
                 borderRadius: '9999px',
                 border: 'none',
                 cursor: 'pointer',
-                background: activeTab === 'products' ? 'transparent' : 'transparent',
-                color: activeTab === 'products' ? '#7c3aed' : '#6b7280',
-                transition: 'color 0.2s',
+                background: activeTab === 'products' ? 'var(--gradient-primary)' : 'transparent',
+                color: activeTab === 'products' ? '#ffffff' : '#6b7280',
+                boxShadow: activeTab === 'products' ? '0 4px 12px rgba(124, 58, 237, 0.3)' : 'none',
+                transition: 'all 0.2s',
               }}
             >
               Products
             </button>
             <button
               onClick={() => setActiveTab('cart')}
-              className="btn-gradient"
+              className={activeTab === 'cart' ? 'btn-gradient' : ''}
               style={{
                 fontSize: '0.875rem',
                 fontWeight: 600,
@@ -59,7 +61,10 @@ const ProductSection = ({
                 borderRadius: '9999px',
                 border: 'none',
                 cursor: 'pointer',
+                background: activeTab === 'cart' ? 'var(--gradient-primary)' : 'transparent',
+                color: activeTab === 'cart' ? '#ffffff' : '#6b7280',
                 boxShadow: activeTab === 'cart' ? '0 4px 12px rgba(124, 58, 237, 0.3)' : 'none',
+                transition: 'all 0.2s',
               }}
             >
               Cart {cartItems.length > 0 ? `(${cartItems.length})` : '(0)'}
